@@ -36,7 +36,7 @@ const FoodMenuCards = () => {
             badgeColor: "bg-yellow-500",
             buttonColor: "bg-red-600 hover:bg-red-700",
             image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop",
-            alt: "Delicious hamburger with fries"
+            alt: "Delicious burger with fries"
         },
         {
             title: "SUPER CHICKEN FRY",
