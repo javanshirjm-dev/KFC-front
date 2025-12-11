@@ -26,82 +26,70 @@ const AboutSection = () => {
     }, []);
 
     return (
-        <div ref={sectionRef} className="bg-white py-30 px-6">
-            <div className="container mx-auto max-w-[1500px]">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    {/* Left Side - Chef Image */}
-                    <div className={`relative transition-all duration-1000 transform ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
-                        <div className="relative overflow-hidden  shadow-2xl group">
+        <div ref={sectionRef} className="bg-white py-24 px-6">
+            <div className="container mx-auto max-w-6xl">
+                <div className="grid lg:grid-cols-2 gap-20 items-center">
+                    {/* Left Side - Image */}
+                    <div className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                        <div className="relative">
                             <img
                                 src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&h=1000&fit=crop"
-                                alt="Chef with plate"
-                                className="w-full h-150 object-cover aspect-[5/5] transform group-hover:scale-105 transition-transform duration-700"
+                                alt="Chef presenting dish"
+                                className="w-full h-[500px] object-cover"
                             />
-                            {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         </div>
-
-                        {/* Decorative Element */}
-                        <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-red-500 rounded-full opacity-20 blur-2xl animate-pulse"></div>
                     </div>
 
                     {/* Right Side - Content */}
-                    <div className={`space-y-6 transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
-                        <div className="space-y-4">
-                            <h3 className="text-red-500 font-bold text-lg uppercase tracking-wider animate-fade-in">
-                                Learn Something FoodKing
-                            </h3>
-
-                            <p className="text-gray-900 text-3xl md:text-4xl font-bold leading-tight animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                                WELCOME TO OUR CULINARY HAVEN, WHERE EACH DISH IS A SYMPHONY OF FLAVORS METICULOUSLY CRAFTED TANTALIZE YOUR TASTE BUDS. NESTLED IN THE HEART OF [CITY], OUR RESTAURANT IS AN INVITING SPACE THAT COMBINES.
+                    <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+                        <div className="space-y-6">
+                            {/* Label */}
+                            <p className="text-sm text-red-500 font-medium tracking-widest uppercase">
+                                About FoodKing
                             </p>
-                        </div>
 
-                        {/* Chef Info */}
-                        <div className={`flex items-center gap-4 pt-8 transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            {/* Chef Avatar */}
-                            <div className="relative group">
-                                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                                    <img
-                                        src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=200&h=200&fit=crop&crop=face"
-                                        alt="Michael V. Christensen"
-                                        className="w-full h-full object-cover"
-                                    />
+                            {/* Heading */}
+                            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 leading-tight">
+                                Where Culinary Art Meets Passion
+                            </h2>
+
+                            {/* Description */}
+                            <p className="text-gray-600 text-lg leading-relaxed">
+                                Welcome to our culinary haven, where each dish is a symphony of flavors meticulously crafted to tantalize your taste buds. Nestled in the heart of the city, our restaurant is an inviting space that combines modern elegance with warm hospitality.
+                            </p>
+
+                            {/* Stats */}
+                            <div className="flex gap-12 pt-4">
+                                <div>
+                                    <div className="text-3xl font-light text-gray-900 mb-1">25+</div>
+                                    <div className="text-sm text-gray-500 uppercase tracking-wide">Years Experience</div>
                                 </div>
-                                <div className="absolute inset-0 rounded-full bg-red-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                <div>
+                                    <div className="text-3xl font-light text-gray-900 mb-1">100+</div>
+                                    <div className="text-sm text-gray-500 uppercase tracking-wide">Unique Dishes</div>
+                                </div>
                             </div>
 
-                            {/* Chef Details */}
-                            <div>
-                                <h4 className="text-gray-900 font-bold text-xl">
-                                    MICHAEL V. CHRISTENSEN / <span className="text-gray-600 font-normal text-base">CEO & FOUNDER</span>
-                                </h4>
+                            {/* Chef Info */}
+                            <div className="flex items-center gap-4 pt-8 border-t border-gray-200">
+                                <img
+                                    src="https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=200&h=200&fit=crop&crop=face"
+                                    alt="Michael V. Christensen"
+                                    className="w-16 h-16 rounded-full object-cover"
+                                />
+                                <div>
+                                    <h4 className="text-gray-900 font-medium text-base">
+                                        Michael V. Christensen
+                                    </h4>
+                                    <p className="text-gray-500 text-sm">
+                                        CEO & Founder
+                                    </p>
+                                </div>
                             </div>
                         </div>
-
-                        {/* Decorative Line */}
-                        <div className={`w-24 h-1 bg-red-500 transition-all duration-1000 delay-700 ${isVisible ? 'w-24 opacity-100' : 'w-0 opacity-0'}`}></div>
                     </div>
                 </div>
             </div>
-
-            <style>{`
-                @keyframes fade-in {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-
-                .animate-fade-in {
-                    animation: fade-in 0.8s ease-out forwards;
-                    opacity: 0;
-                }
-            `}</style>
         </div>
     );
 };
