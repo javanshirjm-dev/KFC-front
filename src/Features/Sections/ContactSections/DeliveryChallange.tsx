@@ -1,4 +1,4 @@
-import DeliveryPhoto from '../../../assets/delivery.png';
+import DeliveryPhoto from '../../../assets/Delivery.PNG';
 
 const DeliveryBanner = () => {
 
