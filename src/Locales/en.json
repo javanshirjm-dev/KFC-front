@@ -1,0 +1,12 @@
+{
+    "home": {
+        "title": "DELICIOUS",
+        "desc": "The best burgers and pizzas in the city."
+    },
+    "nav": {
+        "home": "Home",
+        "menu": "Menu",
+        "blog": "Blog",
+        "contact": "Contact"
+    }
+}

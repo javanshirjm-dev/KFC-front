@@ -1,0 +1,12 @@
+{
+    "home": {
+        "title": "DADLI",
+        "desc": "Şəhərin ən dadlı burger və pitssaları."
+    },
+    "nav": {
+        "home": "Ana Səhifə",
+        "menu": "Menyu",
+        "blog": "Bloq",
+        "contact": "Əlaqə"
+    }
+}
