@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { ShoppingBag, Star, Plus, Minus } from 'lucide-react'
+import { useNavigate } from 'react-router'
+import { ShoppingBag, Star, Plus } from 'lucide-react'
 import ShopFilters from './ShopFilters'
+import { useCart } from '../../../Context/CartContext'
 
 // Response shape from your backend (example you provided)
 type MediaObject = {
@@ -50,6 +52,7 @@ function buildImageUrlFromMedia(media: MediaObject | undefined | null) {
 }
 
 const Products: React.FC = () => {
+    const navigate = useNavigate()
     const { data, isLoading, isError, error } = useQuery<FoodItem[], Error>({
         queryKey: ['foods'],
         queryFn: fetchFoods
@@ -57,6 +60,8 @@ const Products: React.FC = () => {
 
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | 'none'>('none')
+
+    const cart = useCart()
 
     const categories = useMemo(() => {
         if (!data) return [] as string[]
@@ -148,7 +153,8 @@ const Products: React.FC = () => {
                             return (
                                 <article
                                     key={item.id}
-                                    className="group bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+                                    onClick={() => navigate(`/shop/${item.id}`)}
+                                    className="group bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
                                 >
                                     {/* Image Container */}
                                     <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
@@ -207,7 +213,7 @@ const Products: React.FC = () => {
                                                 <span className="text-gray-400 text-sm">Price not available</span>
                                             )}
 
-                                            <button className="group/btn bg-gray-900 hover:bg-gray-800 text-white pl-4 pr-3 py-2.5 rounded-lg transition-all flex items-center gap-2 shadow-sm hover:shadow-md">
+                                            <button onClick={(e) => { e.stopPropagation(); cart.addItem({ id: item.id, title: item.title, price: item.price, image: img ?? null }, 1) }} className="group/btn bg-gray-900 hover:bg-gray-800 text-white pl-4 pr-3 py-2.5 rounded-lg transition-all flex items-center gap-2 shadow-sm hover:shadow-md">
                                                 <span className="text-sm font-medium">Add</span>
                                                 <div className="w-5 h-5 bg-white/20 rounded flex items-center justify-center group-hover/btn:bg-white/30 transition-colors">
                                                     <Plus className="w-3.5 h-3.5" />
