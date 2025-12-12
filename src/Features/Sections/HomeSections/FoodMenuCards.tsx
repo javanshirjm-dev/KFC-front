@@ -30,7 +30,7 @@ const FoodMenuCards = () => {
 
     const menuItems = [
         {
-            title: "DELICIOUS BURGER FRIES",
+            title: "BEST BURGER FRIES",
             startPrice: "$25",
             finalPrice: "$38",
             badgeColor: "bg-yellow-500",
@@ -48,7 +48,7 @@ const FoodMenuCards = () => {
             alt: "Super chicken fry"
         },
         {
-            title: "VERY DELICIOUS PIZZA",
+            title: "VERY TASTY PIZZA",
             startPrice: "$25",
             finalPrice: "$38",
             badgeColor: "bg-yellow-500",
