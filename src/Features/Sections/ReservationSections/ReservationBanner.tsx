@@ -10,7 +10,7 @@ const ContactHeroBanner = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url(https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80)',
+                        backgroundImage: 'url(https://images.ctfassets.net/crbk84xktnsl/2QktW64ekZAzhzYAWFGCQx/365f9bef141710d62eca2bda4304d858/3D_Category_App_Burgers_-_Zinger_Crunch.png)',
                         clipPath: 'polygon(0 0, 100% 0, 85% 100%, 0 100%)'
                     }}
                 >
@@ -23,7 +23,7 @@ const ContactHeroBanner = () => {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url(https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=800&q=80)',
+                        backgroundImage: 'url(https://www.cato.org/sites/cato.org/files/styles/pubs_2x/public/2025-08/coca%20cola.jpg?itok=7fbz15ZA)',
                         clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0 100%)'
                     }}
                 >

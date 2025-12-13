@@ -1,12 +1,14 @@
 {
-    "home": {
+    "banner": {
+        "title0": "ƏN",
         "title": "DADLI",
-        "desc": "Şəhərin ən dadlı burger və pitssaları."
-    },
-    "nav": {
-        "home": "Ana Səhifə",
-        "menu": "Menyu",
-        "blog": "Bloq",
-        "contact": "Əlaqə"
+        "desc": "Şəhərin ən dadlı burger və pitssaları.",
+        "orderText": "Sifarişinizi başlatmaq üçün yalnız {{price}}",
+        "orderNow": "SİFARİŞ ET",
+        "watchVideo": "Videoya bax",
+        "happy": "50K+ Məmnun",
+        "customers": "Müştərilər",
+        "rating": "4.9",
+        "altImage": "Dadlı Burger"
     }
 }

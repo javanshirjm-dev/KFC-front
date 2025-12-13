@@ -18,22 +18,22 @@ const AboutFoodSection = () => {
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-100 opacity-30 rounded-full blur-3xl"></div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="grid lg:grid-cols-2 gap-0 items-center max-w-[1500px] mx-auto">
 
                     {/* Left Side - Burger Image */}
                     <div className={`relative transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
 
                         {/* "Burger" Text Behind */}
-                        <div className="absolute top-10 left-0 text-yellow-400 font-black text-8xl opacity-20 italic" style={{ fontFamily: 'Brush Script MT, cursive' }}>
+                        <div className="absolute top-0 left-9 text-yellow-400 font-black text-8xl opacity-20 italic" style={{ fontFamily: 'Brush Script MT, cursive' }}>
                             Burger
                         </div>
 
                         {/* Main Burger Image */}
-                        <div className="relative animate-float-slow">
+                        <div className="relative animate-float-slow ">
                             <img
                                 src="https://foodking-react.vercel.app/assets/img/hero/burger.png"
                                 alt="Delicious Burger"
-                                className="w-full max-w-2xl drop-shadow-2xl relative z-10"
+                                className="w-130 drop-shadow-2xl relative z-10 "
                             />
 
                             {/* Glow Effect */}
@@ -41,13 +41,13 @@ const AboutFoodSection = () => {
                         </div>
 
                         {/* Price Tag */}
-                        <div className="absolute bottom-0 left-20 bg-white rounded-3xl px-8 py-6 shadow-2xl transform rotate-6 z-20">
-                            <div className="text-gray-900 text-6xl font-black">$4,99</div>
+                        <div className="absolute bottom-8 left-10 bg-white rounded-3xl px-8 py-6 shadow-2xl transform rotate-6 z-20">
+                            <div className="text-gray-900 text-4xl font-black">$4,99</div>
                         </div>
 
                         {/* Since Badge */}
-                        <div className="absolute bottom-20 right-0 bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-3xl px-10 py-8 shadow-2xl transform -rotate-12 z-20">
-                            <div className="text-center font-black text-3xl italic">
+                        <div className="absolute lg:opacity-100 opacity-0 bottom-20 right-47 bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-3xl px-8 py-6 shadow-2xl transform -rotate-12 z-20">
+                            <div className="text-center font-black text-2xl  italic">
                                 SINCE /1985
                             </div>
                         </div>
@@ -62,7 +62,7 @@ const AboutFoodSection = () => {
                         </p>
 
                         {/* Main Heading */}
-                        <h2 className="text-gray-900 font-black text-5xl lg:text-6xl leading-tight">
+                        <h2 className="text-gray-900 font-black text-4xl lg:text-5xl leading-tight">
                             WHERE QUALITY MEET<br />
                             EXCELLENT <span className="text-red-600">SERVICE.</span>
                         </h2>

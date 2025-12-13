@@ -5,9 +5,9 @@ const HamburgerDayBanner = () => {
     const [imageIndex, setImageIndex] = useState(0);
 
     const images = [
-        "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
-        "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&q=80",
-        "https://images.unsplash.com/photo-1551782450-17144efb9c50?w=1200&q=80"
+        "https://www.banburyguardian.co.uk/jpim-static/image/2025/02/03/14/09/KFC-Iconic-bunless-burger-makes-a-return-to-restaurants-with-a-spicy-kick.jpeg?width=1200&enable=upscale",
+        "https://www.kfc-suisse.ch/fileadmin/_processed_/5/3/csm_webseite_mobil_banner_crispycheese_fc65dfbae9.jpg",
+        "https://www.cmgassets.com/s3fs-public/styles/article_details_tablet_image/public/2024-05/kfc-original-crispery-original-crispy-burger-01.jpg.webp?itok=gRk59Tv8"
     ];
 
     return (
@@ -87,33 +87,28 @@ const HamburgerDayBanner = () => {
                     {/* Main Content */}
                     <div className="relative z-10 text-center space-y-6 animate-fade-in">
 
-                        {/* Badge */}
-                        <div className="inline-block">
-                            <p className="text-white/90 text-lg font-bold tracking-wider uppercase">
-                                Deal Of The Day
-                            </p>
-                        </div>
+
 
                         {/* Main Heading */}
-                        <div className="space-y-1 pt-12">
-                            <h1 className="text-white font-black text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight drop-shadow-2xl animate-slide-in">
+                        <div className="space-y-1 pt-1">
+                            <h1 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in">
                                 TODAY'S
                             </h1>
-                            <h2 className="text-white font-black text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.1s' }}>
+                            <h2 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.1s' }}>
                                 THE
                             </h2>
-                            <h3 className="text-white font-black text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.2s' }}>
+                            <h3 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.2s' }}>
                                 HAMBURGER'
                             </h3>
-                            <h4 className="text-white font-black text-6xl md:text-7xl lg:text-8xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.3s' }}>
+                            <h4 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.3s' }}>
                                 DAY
                             </h4>
                         </div>
 
                         {/* Price Section */}
-                        <div className="pt-8 flex items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+                        <div className="pt-1 flex items-center justify-center gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
                             {/* Decorative Arrow */}
-                            <svg className="w-16 h-16 text-white" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
+                            <svg className="w-16 h-16 text-green-300" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="3">
                                 <path d="M 20 50 Q 30 30, 50 50 T 80 50" strokeLinecap="round" />
                                 <circle cx="80" cy="50" r="4" fill="currentColor" />
                             </svg>
@@ -122,14 +117,14 @@ const HamburgerDayBanner = () => {
                                 <p className="text-white/90 text-xl font-bold tracking-wider">
                                     Special Price
                                 </p>
-                                <p className="text-white font-black text-6xl md:text-7xl drop-shadow-xl">
+                                <p className="text-white font-black text-5xl md:text-6xl drop-shadow-xl">
                                     $55
                                 </p>
                             </div>
                         </div>
 
                         {/* Order Button */}
-                        <div className="pt-6 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+                        <div className="pt-2 animate-fade-in" style={{ animationDelay: '0.7s' }}>
                             <button className="group bg-yellow-400 hover:bg-yellow-300 text-red-600 font-black text-xl px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-3 mx-auto overflow-hidden relative">
                                 <span className="relative z-10 flex items-center gap-3">
                                     ORDER NOW

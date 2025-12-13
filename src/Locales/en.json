@@ -1,12 +1,14 @@
 {
-    "home": {
+    "banner": {
+        "title0": "SUPER",
         "title": "DELICIOUS",
-        "desc": "The best burgers and pizzas in the city."
-    },
-    "nav": {
-        "home": "Home",
-        "menu": "Menu",
-        "blog": "Blog",
-        "contact": "Contact"
+        "desc": "The best burgers and pizzas in the city.",
+        "orderText": "Start Your Order Just Only {{price}}",
+        "orderNow": "ORDER NOW",
+        "watchVideo": "Watch Video",
+        "happy": "50K+ Happy",
+        "customers": "Customers",
+        "rating": "4.9",
+        "altImage": "Delicious Burger"
     }
 }

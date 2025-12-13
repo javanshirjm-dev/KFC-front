@@ -112,20 +112,7 @@ const Products: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Hero Section */}
-            <div className="bg-white border-b border-gray-200">
-                <div className="container mx-auto px-6 py-16 max-w-7xl">
-                    <div className="max-w-3xl">
-                        <h1 className="text-5xl font-light text-gray-900 mb-4 tracking-tight">
-                            Discover Our Menu
-                        </h1>
-                        <p className="text-lg text-gray-600 leading-relaxed">
-                            Carefully curated dishes made with the finest ingredients.
-                            Each item tells a story of flavor and craftsmanship.
-                        </p>
-                    </div>
-                </div>
-            </div>
+
 
             <div className="container mx-auto px-6 py-12 max-w-7xl">
                 {/* Filters */}

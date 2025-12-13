@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from "react-i18next";
+import { useNavigate } from 'react-router';
 
 const HomePage = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -9,6 +10,8 @@ const HomePage = () => {
     }, []);
     const { t } = useTranslation();
 
+    const price = '$15.00'
+    const navigate = useNavigate();
     return (
         <div
             className="relative min-h-screen w-full overflow-hidden bg-gradient-to-b from-red-700 to-[#0D0D0D]"
@@ -84,13 +87,13 @@ const HomePage = () => {
 
                         <h1 className="text-white font-black leading-none" style={{ fontFamily: 'Barlow, sans-serif' }}>
                             <div className="text-6xl md:text-8xl lg:text-9xl mb-2 animate-fade-in drop-shadow-2xl">
-                                SUPER
+                                {t('banner.title0')}
                             </div>
                             <div
                                 className="text-6xl md:text-8xl lg:text-9xl mb-2 animate-fade-in text-yellow-300 drop-shadow-2xl"
                                 style={{ animationDelay: '0.2s' }}
                             >
-                                {t("home.title")}
+                                {t('banner.title')}
                             </div>
                             <div
                                 className="text-6xl md:text-8xl lg:text-9xl animate-fade-in drop-shadow-2xl"
@@ -105,9 +108,10 @@ const HomePage = () => {
                                 }`}
                         >
                             <p className="text-white text-xl md:text-2xl font-bold">
-                                Start Your Order Just Only <span className="text-yellow-300 text-3xl md:text-4xl font-black">$25.00</span>
+                                {t('banner.orderText', { price })}
                             </p>
-                            <div className="h-1 bg-yellow-400 rounded-full mt-2 animate-expand"></div>
+                            <p className="text-yellow-200 mt-2 text-sm md:text-base">{t('banner.desc')}</p>
+                            <div className="h-1 bg-yellow-400 rounded-full mt-4 animate-expand"></div>
                         </div>
 
                         {/* BUTTONS */}
@@ -115,9 +119,9 @@ const HomePage = () => {
                             className={`flex gap-4 transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                                 }`}
                         >
-                            <button className="group relative bg-yellow-400 hover:bg-yellow-300 text-red-600 font-black text-lg px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-3 overflow-hidden">
+                            <button onClick={() => navigate("/shop")} className="group relative bg-yellow-400 hover:bg-yellow-300 text-red-600 font-black text-lg px-10 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-3 overflow-hidden">
                                 <span className="relative z-10 flex items-center gap-3">
-                                    ORDER NOW
+                                    {t('banner.orderNow')}
                                     <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                     </svg>
@@ -130,7 +134,7 @@ const HomePage = () => {
                                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
                                     </svg>
-                                    Watch Video
+                                    {t('banner.watchVideo')}
                                 </span>
                             </button>
                         </div>
@@ -151,8 +155,8 @@ const HomePage = () => {
                                 ))}
                             </div>
                             <div className="text-white">
-                                <div className="font-bold text-xl">50K+ Happy</div>
-                                <div className="text-yellow-300 font-semibold">Customers</div>
+                                <div className="font-bold text-xl">{t('banner.happy')}</div>
+                                <div className="text-yellow-300 font-semibold">{t('banner.customers')}</div>
                             </div>
                         </div>
                     </div>
