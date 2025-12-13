@@ -160,11 +160,12 @@ const Products: React.FC = () => {
                                             </div>
                                         )}
 
-                                        {/* Rating Badge */}
+                                        {/* Rating Badge 
                                         <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-1 shadow-lg">
                                             <Star className="w-3.5 h-3.5 fill-yellow-400 text-yellow-400" />
                                             <span className="text-xs font-semibold text-gray-900">4.8</span>
                                         </div>
+                                        */}
                                     </div>
 
                                     {/* Content */}
