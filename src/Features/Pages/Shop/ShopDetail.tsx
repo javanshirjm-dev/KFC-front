@@ -1,10 +1,12 @@
 import React, { useMemo } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { useQuery } from '@tanstack/react-query'
-import { ShoppingCart, ChevronLeft, Star } from 'lucide-react'
+import { ShoppingCart, ChevronLeft, Star, Check } from 'lucide-react'
 import { useCart } from '../../../Context/CartContext'
 import { useAuth } from '../../../Context/AuthContext'
 import DeliveryBanner from '../../Sections/ContactSections/DeliveryChallange'
+import { Heart, Zap } from 'lucide-react'
+
 
 type MediaObject = {
     id: number
@@ -244,107 +246,234 @@ const ShopDetail: React.FC = () => {
 
             {/* Detail Section */}
             <div className="container mx-auto px-6 py-12 max-w-7xl">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    {/* Image */}
-                    <div className="flex items-center justify-center bg-white rounded-lg shadow-lg overflow-hidden">
-                        {imageUrl ? (
-                            <img
-                                src={imageUrl}
-                                alt={data.title}
-                                className="w-full h-auto object-cover max-h-96 md:max-h-full"
-                            />
-                        ) : (
-                            <div className="w-full h-96 flex items-center justify-center bg-gray-100">
-                                <div className="text-center">
-                                    <div className="text-6xl mb-3">🍽️</div>
-                                    <p className="text-gray-400 font-medium">No image available</p>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    {/* Image Section */}
+                    <div className="relative">
+                        {/* Main Image */}
+                        <div className="relative overflow-hidden rounded-2xl bg-gray-100">
+                            {imageUrl ? (
+                                <img
+                                    src={imageUrl}
+                                    alt={data.title}
+                                    className="w-full h-auto object-cover"
+                                />
+                            ) : (
+                                <div className="w-full aspect-square flex items-center justify-center">
+                                    <div className="text-center">
+                                        <div className="text-7xl mb-3">🍽️</div>
+                                        <p className="text-gray-400 font-medium">No image</p>
+                                    </div>
                                 </div>
-                            </div>
-                        )}
+                            )}
+                            {/* Favorite Button */}
+                            <button className="absolute top-4 right-4 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+                                <Heart className="w-5 h-5 text-gray-700" />
+                            </button>
+                        </div>
                     </div>
 
-                    {/* Content */}
-                    <div className="flex flex-col justify-center">
-                        {/* Category */}
-                        {data.category?.foodCategory && (
-                            <span className="inline-block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3 w-fit">
-                                {data.category.foodCategory}
+                    {/* Content Section */}
+                    <div className="flex flex-col">
+                        {/* Category & Badge */}
+                        <div className="flex items-center gap-3 mb-4">
+                            {data.category?.foodCategory && (
+                                <span className="text-sm font-semibold text-red-600 uppercase">
+                                    {data.category.foodCategory}
+                                </span>
+                            )}
+                            <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full flex items-center gap-1">
+                                <Zap className="w-3 h-3" />
+                                Fresh
                             </span>
-                        )}
+                        </div>
 
                         {/* Title */}
-                        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                        <h1 className="text-4xl font-bold text-gray-900 mb-4">
                             {data.title}
                         </h1>
 
                         {/* Rating */}
                         <div className="flex items-center gap-2 mb-6">
-                            <div className="flex gap-1">
+                            <div className="flex gap-0.5">
                                 {[...Array(5)].map((_, i) => (
                                     <Star
                                         key={i}
-                                        className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                                        className="w-4 h-4 fill-yellow-400 text-yellow-400"
                                     />
                                 ))}
                             </div>
-                            <span className="text-gray-600 text-sm ml-2">(127 reviews)</span>
+                            <span className="text-sm text-gray-600">(127)</span>
                         </div>
 
                         {/* Price */}
                         {typeof data.price !== 'undefined' ? (
-                            <div className="mb-8">
-                                <p className="text-gray-600 text-sm mb-2">Price</p>
-                                <p className="text-5xl font-bold text-gray-900">
-                                    ${data.price.toFixed(2)}
-                                </p>
+                            <div className="mb-6">
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-4xl font-bold text-gray-900">
+                                        ${data.price.toFixed(2)}
+                                    </span>
+                                    <span className="text-xl text-gray-400 line-through">
+                                        ${(data.price * 1.25).toFixed(2)}
+                                    </span>
+                                </div>
                             </div>
                         ) : (
-                            <p className="text-gray-400 text-sm mb-8">Price not available</p>
+                            <p className="text-gray-400 mb-6">Price not available</p>
                         )}
 
                         {/* Description */}
                         {data.description && (
-                            <div className="mb-8">
-                                <p className="text-gray-600 text-sm font-medium mb-3">Description</p>
-                                <p className="text-gray-700 text-lg leading-relaxed">
-                                    {data.description}
-                                </p>
-                            </div>
+                            <p className="text-gray-600 mb-1 leading-relaxed">
+                                {data.description}
+                            </p>
                         )}
+
+                        {/* Divider */}
+                        <div className="border-t border-gray-200 my-6"></div>
+
+                        {/* Quick Info */}
+                        <div className="flex gap-6 mb-8 text-sm">
+                            <div>
+                                <p className="text-gray-500 mb-1">Delivery</p>
+                                <p className="font-semibold text-gray-900">30 min</p>
+                            </div>
+                            <div>
+                                <p className="text-gray-500 mb-1">Status</p>
+                                <p className="font-semibold text-green-600">In Stock</p>
+                            </div>
+                            <div>
+                                <p className="text-gray-500 mb-1">Serving</p>
+                                <p className="font-semibold text-gray-900">1-2 people</p>
+                            </div>
+                        </div>
 
                         {/* Add to Cart Button */}
                         <button
                             onClick={handleAddToCart}
-                            className="w-full bg-gradient-to-r from-red-500 to-red-600 text-white py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-3 hover:from-red-600 hover:to-red-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
+                            className="w-full bg-red-600 text-white py-4 rounded-xl font-semibold text-base flex items-center justify-center gap-2 hover:bg-red-700 transition-colors mb-3"
                         >
-                            <ShoppingCart className="w-6 h-6" />
+                            <ShoppingCart className="w-5 h-5" />
                             Add to Cart
                         </button>
 
-                        {/* Stock Info */}
-                        <p className="text-center text-green-600 font-medium mt-4">
-                            ✓ In Stock
+                        {/* Secondary Info */}
+                        <p className="text-center text-sm text-gray-500">
+                            Free delivery on orders over $50
                         </p>
                     </div>
                 </div>
 
-                {/* Additional Info */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-                    <div className="bg-white p-6 rounded-lg shadow">
-                        <div className="text-3xl mb-3">🚚</div>
-                        <h3 className="font-bold text-gray-900 mb-2">Fast Delivery</h3>
-                        <p className="text-sm text-gray-600">Get your food delivered in 30 minutes or less</p>
+
+
+                <div className="max-w-7xl mx-auto  py-16">
+                    {/* Main Title */}
+                    <div className="mb-12">
+                        <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 leading-tight">
+                            Experience Culinary Excellence Like Never Before
+                        </h1>
+                        <p className="text-gray-600 text-lg leading-relaxed max-w-5xl">
+                            At our restaurant, we believe that dining is more than just eating—it's an experience that engages all your senses.
+                            From the moment you step through our doors, you'll be immersed in an atmosphere of warmth and sophistication.
+                            Our expert chefs meticulously craft each dish using only the finest locally-sourced ingredients, ensuring every bite
+                            is a celebration of flavor and quality. Whether you're joining us for a casual lunch, romantic dinner, or special celebration,
+                            we're committed to creating memorable moments that will keep you coming back. Our attentive staff is dedicated to providing
+                            exceptional service that makes every visit feel personal and special.
+                        </p>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow">
-                        <div className="text-3xl mb-3">👨‍🍳</div>
-                        <h3 className="font-bold text-gray-900 mb-2">Fresh Ingredients</h3>
-                        <p className="text-sm text-gray-600">Made with the highest quality fresh ingredients</p>
+
+                    {/* Divider */}
+                    <div className="border-t border-gray-300 mb-12"></div>
+
+                    {/* More Details Section */}
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-10">
+                            What Makes Us Special
+                        </h2>
+
+                        {/* Two Column Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-6">
+                            {/* Left Column */}
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Fresh, organic ingredients sourced daily from local farms and trusted suppliers
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Award-winning chefs with decades of culinary expertise and passion for innovation
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Extensive menu catering to all dietary preferences including vegan, gluten-free, and keto options
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Elegant dining atmosphere with carefully curated ambiance and comfortable seating
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Right Column */}
+                            <div className="space-y-6">
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Fast and reliable delivery service ensuring your meal arrives hot and fresh at your door
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Personalized service from our friendly staff who remember your preferences and favorites
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Special event catering and private dining rooms available for celebrations and gatherings
+                                    </p>
+                                </div>
+
+                                <div className="flex items-start gap-4">
+                                    <div className="flex-shrink-0 w-6 h-6 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mt-1">
+                                        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                                    </div>
+                                    <p className="text-gray-700 text-base leading-relaxed">
+                                        Loyalty rewards program offering exclusive discounts and special perks for regular guests
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className="bg-white p-6 rounded-lg shadow">
-                        <div className="text-3xl mb-3">💯</div>
-                        <h3 className="font-bold text-gray-900 mb-2">Best Quality</h3>
-                        <p className="text-sm text-gray-600">Guaranteed satisfaction with every order</p>
-                    </div>
+
+
                 </div>
             </div>
             <DeliveryBanner />

@@ -157,7 +157,7 @@ const Products: React.FC = () => {
                                     className="group bg-white border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 cursor-pointer"
                                 >
                                     {/* Image Container */}
-                                    <div className="relative overflow-hidden bg-gray-100 aspect-[4/3]">
+                                    <div className="relative overflow-hidden bg-gray-100 aspect-[4/3] mt-4 mx-1">
                                         {img ? (
                                             <img
                                                 src={img}
