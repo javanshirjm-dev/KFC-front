@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { useCart } from '../../Context/CartContext'
 import { useAuth } from '../../Context/AuthContext'
+import { useNotification } from '../../Context/NotificationContext'
+import { useNavigate } from 'react-router'
 
 const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:1337'
 
 const CartDrawer: React.FC = () => {
+    const navigate = useNavigate()
     const { items, totalItems, totalPrice, isOpen, close, removeItem, setQuantity, clear } = useCart()
     const { user, token } = useAuth()
+    const { addNotification } = useNotification()
 
     // Debug: render state
     // eslint-disable-next-line no-console
@@ -30,10 +34,6 @@ const CartDrawer: React.FC = () => {
                 <div className="flex items-center justify-between mb-4">
                     <h3 className="text-lg font-bold">Your Cart ({totalItems})</h3>
                     <button onClick={close} className="text-gray-500">Close</button>
-                </div>
-                {/* DEBUG: visible state */}
-                <div className="text-xs bg-blue-100 p-2 mb-2 rounded text-blue-900">
-                    showCheckout={String(showCheckout)} user={user ? 'yes' : 'no'} items={items.length}
                 </div>
 
                 {!user ? (
@@ -71,12 +71,17 @@ const CartDrawer: React.FC = () => {
                         </div>
 
                         {!showCheckout ? (
-                            <div className="flex gap-2 mt-4">
+                            <div className="flex gap-2 mt-4 flex-col space-y-2">
                                 <button onClick={() => {
                                     // eslint-disable-next-line no-console
                                     console.debug('[CartDrawer] Checkout clicked', { items, totalPrice, user })
+                                    addNotification('Proceeding to checkout...', 'info')
                                     setShowCheckout(true); setSubmitError(null); setSuccessMessage(null)
                                 }} className="flex-1 bg-red-600 text-white py-2 rounded font-bold">Checkout</button>
+                                <button onClick={() => {
+                                    navigate('/orders')
+                                    close()
+                                }} className="flex-1 bg-blue-600 text-white py-2 rounded font-bold">Your Orders</button>
                                 <button onClick={clear} className="bg-gray-100 py-2 px-4 rounded">Clear</button>
                             </div>
                         ) : (
@@ -157,6 +162,7 @@ const CartDrawer: React.FC = () => {
                                                     }
 
                                                     setSuccessMessage('Order created successfully!')
+                                                    addNotification('✓ Order placed successfully!', 'success', 4000)
                                                     clear()
                                                     // Optionally close drawer after short delay
                                                     setTimeout(() => {

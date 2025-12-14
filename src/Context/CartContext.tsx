@@ -12,7 +12,7 @@ type CartContextType = {
     items: CartItem[]
     totalItems: number
     totalPrice: number
-    addItem: (item: Omit<CartItem, 'quantity'>, qty?: number) => void
+    addItem: (item: Omit<CartItem, 'quantity'>, qty?: number, onAdded?: (title: string) => void) => void
     removeItem: (id: number) => void
     setQuantity: (id: number, qty: number) => void
     clear: () => void
@@ -49,7 +49,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const totalItems = items.reduce((s, it) => s + it.quantity, 0)
     const totalPrice = items.reduce((s, it) => s + (it.price ?? 0) * it.quantity, 0)
 
-    const addItem = useCallback((item: Omit<CartItem, 'quantity'>, qty = 1) => {
+    const addItem = useCallback((item: Omit<CartItem, 'quantity'>, qty = 1, onAdded?: (title: string) => void) => {
         setItems((prev) => {
             const found = prev.find((p) => p.id === item.id)
             if (found) {
@@ -57,6 +57,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
             }
             return [...prev, { ...item, quantity: qty }]
         })
+        // Call callback to notify
+        onAdded?.(item.title)
     }, [])
 
     const removeItem = useCallback((id: number) => {

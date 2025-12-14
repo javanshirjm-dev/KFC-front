@@ -10,6 +10,7 @@ import GalleryPage from "./Features/Pages/Gallery";
 import ChefPage from "./Features/Pages/Chef";
 import ReservationPage from "./Features/Pages/Reservation";
 import FAQPage from "./Features/Pages/FAQ";
+import OrdersPage from "./Features/Pages/Orders";
 
 export const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
             {
                 path: "/faq",
                 element: <FAQPage />,
+            },
+            {
+                path: "/orders",
+                element: <OrdersPage />,
             }
 
         ]

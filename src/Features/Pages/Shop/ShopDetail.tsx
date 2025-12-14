@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query'
 import { ShoppingCart, ChevronLeft, Star, Check } from 'lucide-react'
 import { useCart } from '../../../Context/CartContext'
 import { useAuth } from '../../../Context/AuthContext'
+import { useNotification } from '../../../Context/NotificationContext'
 import DeliveryBanner from '../../Sections/ContactSections/DeliveryChallange'
 import { Heart, Zap } from 'lucide-react'
 
@@ -224,7 +225,10 @@ const ShopDetail: React.FC = () => {
                 price: data.price,
                 image: imageUrl ?? null
             },
-            1
+            1,
+            (title) => {
+                addNotification(`✓ ${title} added to cart!`, 'success', 2500)
+            }
         )
         cart.open()
     }
