@@ -10,28 +10,28 @@ const FoodGallery = () => {
 
     const foodImages = [
         {
-            src: "https://images.unsplash.com/photo-1633504581786-316c8002b1b9?w=600&q=80",
-            title: "Grilled Skewers",
+            src: "https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80",
+            title: "Hot Wings",
             category: "Appetizers"
         },
         {
-            src: "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80",
-            title: "Pasta Special",
-            category: "Main Course"
+            src: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=600&q=80",
+            title: "Bucket Meal",
+            category: "Family Packs"
         },
         {
-            src: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80",
-            title: "Classic Burger",
+            src: "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?w=600&q=80",
+            title: "Zinger Burger",
             category: "Burgers"
         },
         {
-            src: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80",
-            title: "Fresh Salad",
-            category: "Healthy"
+            src: "https://imageproxy.wolt.com/assets/67320893d775830ca1efc8f5",
+            title: "Coleslaw & Fries",
+            category: "Sides"
         },
         {
-            src: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&q=80",
-            title: "Deluxe Burger",
+            src: "https://www.thesouthafrican.com/wp-content/uploads/2025/10/feature-kfc.jpg.optimal.jpg",
+            title: "Colonel's Original",
             category: "Signature"
         }
     ];

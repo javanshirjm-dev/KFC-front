@@ -8,112 +8,76 @@ const BlogPage = () => {
 
     const allPosts = [
         {
-            image: "https://images.unsplash.com/photo-1619454016518-697bc231e7cb?w=1200&q=80",
-            title: "Quick Cravings: Unraveling Fast Food Delights",
-            excerpt: "There are many variations of passages available, but majority have suffered. If you are going to use a passage, you need to be sure there isn't anything embarrassing hidden in the middle of text.",
-            author: "Shikhon Ha",
+            image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=1200&q=80",
+            title: "The Secret Recipe: KFC's 11 Herbs & Spices Mystery",
+            excerpt: "Discover the legendary story behind Colonel Sanders' secret recipe that has remained locked in a vault for decades. Learn about the unique blend that makes KFC chicken irresistible.",
+            author: "Marcus Johnson",
             date: "March 24, 2024",
             comments: 35,
-            category: "Fast Food"
+            category: "Original Recipe"
         },
         {
-            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
-            title: "The Art of Crafting Perfect Burgers at Home",
-            excerpt: "Discover the secrets behind creating restaurant-quality burgers in your own kitchen. From selecting the right meat blend to perfecting your cooking technique.",
-            author: "Michael Chen",
+            image: "https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?w=1200&q=80",
+            title: "Zinger Burger Evolution: A Spicy Success Story",
+            excerpt: "From its humble beginnings to becoming a global sensation, explore how the Zinger became one of KFC's most iconic menu items and a fan favorite worldwide.",
+            author: "Sarah Mitchell",
             date: "March 23, 2024",
             comments: 28,
             category: "Burgers"
         },
         {
-            image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
-            title: "Pizza Night: Traditional Italian Recipes Revealed",
-            excerpt: "Learn authentic Italian pizza-making techniques passed down through generations. From dough preparation to the perfect sauce balance.",
-            author: "Sofia Romano",
+            image: "https://images.unsplash.com/photo-1562967914-608f82629710?w=1200&q=80",
+            title: "Bucket Meals: Perfect for Every Occasion",
+            excerpt: "Whether it's game night, family gatherings, or office parties, discover why KFC buckets have become the go-to choice for feeding groups and creating memories.",
+            author: "Tom Anderson",
             date: "March 22, 2024",
             comments: 42,
-            category: "Pizza"
+            category: "Family Meals"
         },
         {
-            image: "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1200&q=80",
-            title: "Healthy Fast Food: Making Better Choices",
-            excerpt: "Not all fast food has to be unhealthy. Explore options and tips for making nutritious choices when you're on the go.",
-            author: "Emma Watson",
+            image: "https://www.thesouthafrican.com/wp-content/uploads/2025/10/feature-kfc.jpg.optimal.jpg",
+            title: "Crispy vs Original: The Great KFC Debate",
+            excerpt: "Dive into the friendly rivalry between Extra Crispy and Original Recipe fans. Which coating reigns supreme? We explore what makes each style unique.",
+            author: "Jennifer Lee",
             date: "March 21, 2024",
             comments: 19,
-            category: "Fast Food"
+            category: "Chicken Styles"
         },
         {
-            image: "https://images.unsplash.com/photo-1562007908-17c67e878c88?w=1200&q=80",
-            title: "Dessert Dreams: Creating Instagram-Worthy Treats",
-            excerpt: "Master the art of plating and presentation with these stunning dessert ideas that taste as good as they look.",
-            author: "James Baker",
+            image: "https://images.ctfassets.net/wtodlh47qxpt/20O6So7pfw8LmaNQ5yG8L/14dc9f15bb0e060b99f2fdd869313c68/A-34924-0.jpg",
+            title: "Hot Wings Heat Scale: Finding Your Perfect Spice Level",
+            excerpt: "From mild to fiery hot, KFC's wing varieties cater to every heat preference. Learn about the different spice levels and what makes each one special.",
+            author: "Alex Rodriguez",
             date: "March 20, 2024",
             comments: 31,
-            category: "Desserts"
+            category: "Wings"
         },
         {
-            image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1200&q=80",
-            title: "The Ultimate Guide to Craft Beverages",
-            excerpt: "From artisanal sodas to specialty coffees, explore the world of craft beverages and how to make them at home.",
-            author: "Lisa Thompson",
+            image: "https://www.allrecipes.com/thmb/okff_w2aH050Lsx70HsCmg8DmI8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/ar-KFC-meal-2x1-47e17b6af3604404becfa5cdf50bd7a5.jpg",
+            title: "The Perfect Sides: More Than Just Chicken",
+            excerpt: "KFC's signature sides like coleslaw, mashed potatoes, and biscuits complete the meal. Discover the history and recipes behind these beloved accompaniments.",
+            author: "Rachel Green",
             date: "March 19, 2024",
             comments: 24,
-            category: "Beverages"
+            category: "Sides"
         },
         {
-            image: "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=1200&q=80",
-            title: "Street Food Culture Around the World",
-            excerpt: "Take a culinary journey through the best street food destinations and learn what makes each cuisine unique.",
-            author: "Carlos Rodriguez",
+            image: "https://kfc.nl/wp-content/uploads/2025/10/251727_KFC_W6_HomepageBanner_Mobile_1720x21503-860x1075.jpg",
+            title: "Colonel Sanders: The Man Behind the Legend",
+            excerpt: "Take a journey through the remarkable life of Harland Sanders, from his humble beginnings to building one of the world's most recognizable fast-food empires.",
+            author: "William Brooks",
             date: "March 18, 2024",
             comments: 45,
-            category: "Fast Food"
+            category: "Brand History"
         },
         {
-            image: "https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=1200&q=80",
-            title: "Burger Innovation: Beyond the Classic",
-            excerpt: "Explore creative burger variations from around the globe. From exotic toppings to unexpected flavor combinations.",
-            author: "David Kim",
+            image: "https://restaurantindia.s3.ap-south-1.amazonaws.com/s3fs-public/2020-04/kfc%281000x562%29.jpg",
+            title: "Around the World: KFC's Global Menu Variations",
+            excerpt: "From Japan's original chicken to India's spicy options, explore how KFC adapts its menu to local tastes while maintaining its signature quality.",
+            author: "Nina Patel",
             date: "March 17, 2024",
             comments: 22,
-            category: "Burgers"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&q=80",
-            title: "Wood-Fired Pizza: Techniques and Tips",
-            excerpt: "Understanding the science and art behind wood-fired pizza ovens and how to achieve that perfect crispy crust.",
-            author: "Marco Bianchi",
-            date: "March 16, 2024",
-            comments: 38,
-            category: "Pizza"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&q=80",
-            title: "Sweet Sensations: Chocolate Dessert Masterclass",
-            excerpt: "Dive deep into the world of chocolate desserts with professional techniques and recipes from top pastry chefs.",
-            author: "Sarah Mitchell",
-            date: "March 15, 2024",
-            comments: 29,
-            category: "Desserts"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
-            title: "Fresh Smoothie Recipes for Every Season",
-            excerpt: "Healthy, delicious smoothie combinations that will energize your day and support your wellness goals.",
-            author: "Rachel Green",
-            date: "March 14, 2024",
-            comments: 16,
-            category: "Beverages"
-        },
-        {
-            image: "https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=1200&q=80",
-            title: "Fast Food Industry Trends in 2024",
-            excerpt: "An in-depth look at how technology and consumer preferences are shaping the future of fast food.",
-            author: "Tom Anderson",
-            date: "March 13, 2024",
-            comments: 33,
-            category: "Fast Food"
+            category: "International"
         }
     ];
 

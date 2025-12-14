@@ -48,13 +48,13 @@ const FoodMenuCards = () => {
             alt: "Super chicken fry"
         },
         {
-            title: "VERY TASTY PIZZA",
+            title: "POP CORN CHICKEN",
             startPrice: "$25",
             finalPrice: "$38",
             badgeColor: "bg-yellow-500",
             buttonColor: "bg-red-600 hover:bg-red-700",
-            image: "https://tastycurryrestaurantandpizza.com/wp-content/uploads/2020/06/Pepperoni-Pizza.jpg",
-            alt: "Delicious pizza"
+            image: "https://i.pinimg.com/736x/27/0d/6d/270d6d9db5d22295c1eca6e44c572297.jpg",
+            alt: "Chicken popcorn"
         }
     ];
 

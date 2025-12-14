@@ -2,19 +2,19 @@
 const TwoBurgerCards = () => {
     return (
         <>
-            <div className="flex flex-col md:flex-row justify-center items-center gap-8 my-12 px-6">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-8 my-12 px-20">
                 {/* Left Card - KFC Box with Glow */}
                 <div className="leftburger group">
-                    <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-80 lg:w-180 transform hover:scale-105 transition-all duration-500">
+                    <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-80 lg:w-full transform hover:scale-105 transition-all duration-500">
                         {/* Glow Effect */}
                         <div className="absolute -inset-1 bg-gradient-to-r from-red-600 via-yellow-500 to-red-600 rounded-2xl opacity-0 group-hover:opacity-75 blur-xl transition-opacity duration-500 animate-pulse"></div>
 
                         {/* Card Content */}
                         <div className="relative">
                             <img
-                                src="https://5.imimg.com/data5/SELLER/Default/2023/9/341726677/MW/FD/QJ/99188395/kfc-box.jpg"
+                                src="https://cdn.i.haymarketmedia.asia/?n=campaign-asia%2Fcontent%2FKFC+OOH+1+HotSpicyCOB+land.jpg&c=0"
                                 alt="kfc box"
-                                className="w-full lg:h-145 h-110 object-cover group-hover:scale-103 transition-transform duration-700"
+                                className="w-full lg:h-120 h-110 object-cover group-hover:scale-103 transition-transform duration-700"
                             />
 
                             {/* Animated Shine Effect */}
@@ -25,28 +25,22 @@ const TwoBurgerCards = () => {
 
                 {/* Right Card - Burger with Text and Glow */}
                 <div className="rightburger group">
-                    <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-80 lg:w-180 transform hover:scale-105 transition-all duration-500">
+                    <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden w-80 lg:w-full transform hover:scale-105 transition-all duration-500">
                         {/* Glow Effect */}
                         <div className="absolute -inset-1 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 rounded-2xl opacity-0 group-hover:opacity-75 blur-xl transition-opacity duration-500 animate-pulse"></div>
 
                         {/* Card Content */}
                         <div className="relative">
                             <img
-                                src="https://www.kfc-suisse.ch/fileadmin/_processed_/c/a/csm_webseite_desktop-classic-original_538dd9e0dd.jpg"
+                                src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/a0f60c8924425.560c59ccdc958.jpg"
                                 alt="Burger with text"
-                                className="w-full lg:h-145 h-110 object-cover group-hover:scale-103 transition-transform duration-700"
+                                className="w-full lg:h-120 h-110 object-cover group-hover:scale-103 transition-transform duration-700"
                             />
 
                             {/* Dark Overlay */}
                             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-300"></div>
 
-                            {/* Animated Text */}
-                            <h1
-                                className="absolute opacity-60 left-1/2 top-33 -translate-x-1/2 -translate-y-1/2 text-center font-black text-white text-6xl drop-shadow-2xl animate-bounce-slow"
-                                style={{ fontFamily: 'Pacifico, cursive' }}
-                            >
-                                Hot & Spicy
-                            </h1>
+
 
                             {/* Animated Shine Effect */}
                             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

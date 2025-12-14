@@ -10,27 +10,27 @@ const BlogSection = () => {
 
     const blogPosts = [
         {
-            image: "https://images.unsplash.com/photo-1619454016518-697bc231e7cb?w=800&q=80",
-            category: "Fast Food",
+            image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=800&q=80",
+            category: "Fried Chicken",
             categoryColor: "text-red-600",
             date: "15 December 2024",
-            title: "The Ultimate Guide to Perfect Fast Food",
+            title: "The Secret Behind KFC's 11 Herbs and Spices",
             delay: "0s"
         },
         {
-            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
-            category: "Health Care",
+            image: "https://images.unsplash.com/photo-1562967914-608f82629710?w=800&q=80",
+            category: "Menu Favorites",
             categoryColor: "text-red-600",
             date: "15 December 2024",
-            title: "Healthy Eating: Balance Your Diet",
+            title: "KFC's Most Popular Bucket Meals Ranked",
             delay: "0.2s"
         },
         {
-            image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80",
-            category: "Restaurants",
+            image: "https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=800&q=80",
+            category: "Behind the Scenes",
             categoryColor: "text-red-600",
             date: "15 December 2024",
-            title: "Top Restaurant Experiences This Year",
+            title: "How KFC Makes Their Famous Crispy Chicken",
             delay: "0.4s"
         }
     ];
