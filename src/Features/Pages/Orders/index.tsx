@@ -19,8 +19,10 @@ type Order = {
     }
 }
 
-async function fetchUserOrders(token: string): Promise<Order[]> {
-    const res = await fetch(`${apiBase}/api/orders?populate=*`, {
+async function fetchUserOrders(token: string, userId: number): Promise<Order[]> {
+    // Filter orders by user ID using Strapi's filter syntax
+    const filterUrl = `${apiBase}/api/orders?populate=*&filters[user][id][$eq]=${userId}`
+    const res = await fetch(filterUrl, {
         headers: {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
@@ -50,9 +52,9 @@ const OrdersPage: React.FC = () => {
     }
 
     const { data: orders, isLoading, isError, error } = useQuery({
-        queryKey: ['orders', token],
-        queryFn: () => fetchUserOrders(token),
-        enabled: !!token
+        queryKey: ['orders', token, user?.id],
+        queryFn: () => fetchUserOrders(token, user!.id),
+        enabled: !!token && !!user
     })
 
     if (isLoading) {
