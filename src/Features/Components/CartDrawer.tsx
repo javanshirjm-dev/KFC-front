@@ -31,6 +31,10 @@ const CartDrawer: React.FC = () => {
                     <h3 className="text-lg font-bold">Your Cart ({totalItems})</h3>
                     <button onClick={close} className="text-gray-500">Close</button>
                 </div>
+                {/* DEBUG: visible state */}
+                <div className="text-xs bg-blue-100 p-2 mb-2 rounded text-blue-900">
+                    showCheckout={String(showCheckout)} user={user ? 'yes' : 'no'} items={items.length}
+                </div>
 
                 {!user ? (
                     <div className="text-center py-12">
