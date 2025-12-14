@@ -167,6 +167,7 @@ const ShopDetail: React.FC = () => {
     const navigate = useNavigate()
     const { user } = useAuth()
     const cart = useCart()
+    const { addNotification } = useNotification()
 
     const { data, isLoading, isError, error } = useQuery<FoodItem, Error>({
         queryKey: ['food', id],

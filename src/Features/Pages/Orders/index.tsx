@@ -105,7 +105,7 @@ const OrdersPage: React.FC = () => {
                         {orders.map((order: any) => {
                             // Handle both Strapi v4 format (with attributes) and direct format
                             const attrs = order.attributes || order
-                            
+
                             if (!attrs) {
                                 console.error('Invalid order structure:', order)
                                 return null
