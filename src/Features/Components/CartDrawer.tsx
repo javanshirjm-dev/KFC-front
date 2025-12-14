@@ -8,6 +8,10 @@ const CartDrawer: React.FC = () => {
     const { items, totalItems, totalPrice, isOpen, close, removeItem, setQuantity, clear } = useCart()
     const { user, token } = useAuth()
 
+    // Debug: render state
+    // eslint-disable-next-line no-console
+    console.debug('[CartDrawer] render', { isOpen, totalItems, user })
+
     const [showCheckout, setShowCheckout] = useState(false)
     const [name, setName] = useState(user?.username || '')
     const [emailInput, setEmailInput] = useState(user?.email || '')
@@ -64,7 +68,11 @@ const CartDrawer: React.FC = () => {
 
                         {!showCheckout ? (
                             <div className="flex gap-2 mt-4">
-                                <button onClick={() => { setShowCheckout(true); setSubmitError(null); setSuccessMessage(null) }} className="flex-1 bg-red-600 text-white py-2 rounded font-bold">Checkout</button>
+                                <button onClick={() => {
+                                    // eslint-disable-next-line no-console
+                                    console.debug('[CartDrawer] Checkout clicked', { items, totalPrice, user })
+                                    setShowCheckout(true); setSubmitError(null); setSuccessMessage(null)
+                                }} className="flex-1 bg-red-600 text-white py-2 rounded font-bold">Checkout</button>
                                 <button onClick={clear} className="bg-gray-100 py-2 px-4 rounded">Clear</button>
                             </div>
                         ) : (
@@ -110,15 +118,14 @@ const CartDrawer: React.FC = () => {
                                                     }
 
                                                     const headers: Record<string, string> = { 'Content-Type': 'application/json' }
-                                                    if (user && (user as any) && (useAuth as any)) {
-                                                        // include token if available
-                                                    }
-                                                    // get token from context
-                                                    // (we have token in useAuth; grab it)
                                                     // Prefer token from AuthContext
                                                     if (token) {
                                                         headers['Authorization'] = `Bearer ${token}`
                                                     }
+
+                                                    // Debug: payload and headers
+                                                    // eslint-disable-next-line no-console
+                                                    console.debug('[CartDrawer] placing order', { payload, headers })
 
                                                     const res = await fetch(`${apiBase}/api/orders`, {
                                                         method: 'POST',
@@ -135,6 +142,10 @@ const CartDrawer: React.FC = () => {
                                                     } catch (e) {
                                                         json = null
                                                     }
+
+                                                    // Debug: server response
+                                                    // eslint-disable-next-line no-console
+                                                    console.debug('[CartDrawer] order response', { status: res.status, textBody, json })
 
                                                     if (!res.ok) {
                                                         const msg = json?.error?.message || json?.message || textBody || `Failed to create order: ${res.status}`
