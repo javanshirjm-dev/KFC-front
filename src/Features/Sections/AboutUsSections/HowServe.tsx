@@ -3,188 +3,168 @@ import { useNavigate } from 'react-router';
 
 const HowWeServeSection = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [activeStep, setActiveStep] = useState(0);
 
     useEffect(() => {
         setIsVisible(true);
+        const interval = setInterval(() => {
+            setActiveStep((prev) => (prev + 1) % 3);
+        }, 3000);
+        return () => clearInterval(interval);
     }, []);
 
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
+
+    const steps = [
+        {
+            number: "01",
+            title: "ORDER YOUR FAVORITES",
+            description: "Browse our finger lickin' good menu and choose from our signature fried chicken, burgers, and more",
+            icon: "🍗",
+            color: "from-red-500 to-red-600"
+        },
+        {
+            number: "02",
+            title: "WE PREPARE FRESH",
+            description: "Every piece is hand-breaded and pressure-cooked to perfection with our secret blend of 11 herbs & spices",
+            icon: "👨‍🍳",
+            color: "from-red-600 to-red-700"
+        },
+        {
+            number: "03",
+            title: "DELIVERED HOT",
+            description: "Get your hot, crispy KFC delivered straight to your door or pick it up at your nearest location",
+            icon: "🚗",
+            color: "from-red-700 to-red-800"
+        }
+    ];
 
     return (
-        <div className="w-full bg-gradient-to-b from-white to-yellow-50 py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-            <div className="container mx-auto max-w-7xl">
-
-                {/* Heading */}
-                <h2 className="text-center text-gray-900 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black mb-12 sm:mb-16 lg:mb-20">
-                    HOW WE SERVE YOU?
-                </h2>
-
-                {/* Steps Container - Desktop Layout */}
-                <div className="hidden lg:flex relative items-center justify-center gap-6 xl:gap-9">
-
-                    {/* Step 1 - Cooking with Care */}
-                    <div className={`relative z-10 text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                        <div className="relative inline-block group">
-                            {/* Circle Background */}
-                            <div className="w-60 h-60 xl:w-80 xl:h-80 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
-                                <img
-                                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80"
-                                    alt="Pizza"
-                                    className="w-48 h-48 xl:w-64 xl:h-64 object-cover rounded-full"
-                                />
-                            </div>
-                            {/* Number Badge */}
-                            <div className="absolute -top-4 -left-4 w-14 h-14 xl:w-16 xl:h-16 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-xl xl:text-2xl shadow-lg group-hover:bg-green-700 transition-colors">
-                                01
-                            </div>
-                        </div>
-                        <h3 className="text-gray-900 text-xl xl:text-2xl font-black mt-6 xl:mt-8 mb-3 xl:mb-4">
-                            COOKING WITH CARE
-                        </h3>
-                        <p className="text-gray-600 text-sm xl:text-base max-w-xs mx-auto leading-relaxed">
-                            Experience the perfect dining with our carefully crafted dishes
-                        </p>
-                    </div>
-
-                    {/* Dotted Line 1 */}
-                    <div className="relative z-0 -mx-8 xl:-mx-12">
-                        <div className="w-32 xl:w-48 border-t-2 border-dotted border-gray-400"></div>
-                    </div>
-
-                    {/* Step 2 - Quickly Delivery (Elevated) */}
-                    <div className={`relative z-20 text-center -mt-32 transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '0.2s' }}>
-                        <div className="relative inline-block group">
-                            {/* Square Background */}
-                            <div className="w-56 h-56 xl:w-66 xl:h-66 bg-gradient-to-br mt-32 xl:mt-40 from-yellow-300 to-yellow-400 rounded-3xl flex items-center justify-center shadow-2xl transform rotate-3 group-hover:rotate-6 transition-all duration-300 group-hover:scale-105">
-                                <div className="transform -rotate-3 group-hover:-rotate-6 transition-transform duration-300">
-                                    <div className="text-7xl xl:text-9xl">🧀</div>
-                                </div>
-                            </div>
-                            {/* Number Badge */}
-                            <div className="absolute top-72 xl:top-85 left-6 xl:left-8 w-14 h-14 xl:w-16 xl:h-16 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-xl xl:text-2xl shadow-lg group-hover:bg-green-700 transition-colors">
-                                02
-                            </div>
-                        </div>
-                        <h3 className="text-gray-900 text-xl xl:text-2xl font-black mt-6 xl:mt-8 mb-3 xl:mb-4">
-                            QUICKLY DELIVERY
-                        </h3>
-                        <p className="text-gray-700 text-sm xl:text-base max-w-xs mx-auto leading-relaxed">
-                            Fast and efficient delivery right to your doorstep
-                        </p>
-                    </div>
-
-                    {/* Dotted Line 2 */}
-                    <div className="relative z-0 -mx-8 xl:-mx-12 mt-32">
-                        <div className="w-32 xl:w-48 border-t-2 border-dotted border-gray-400"></div>
-                    </div>
-
-                    {/* Step 3 - Choose Food */}
-                    <div className={`relative z-10 text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '0.4s' }}>
-                        <div className="relative inline-block group">
-                            {/* Circle Background */}
-                            <div className="w-60 h-60 xl:w-80 xl:h-80 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full flex items-center justify-center shadow-xl overflow-hidden group-hover:shadow-2xl transition-all duration-300 group-hover:scale-105">
-                                <img
-                                    src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&q=80"
-                                    alt="Delivery"
-                                    className="w-64 h-64 xl:w-82 xl:h-82 object-cover"
-                                />
-                            </div>
-                            {/* Number Badge */}
-                            <div className="absolute -top-4 -left-4 w-14 h-14 xl:w-16 xl:h-16 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-xl xl:text-2xl shadow-lg group-hover:bg-green-700 transition-colors">
-                                03
-                            </div>
-                        </div>
-                        <h3 className="text-gray-900 text-xl xl:text-2xl font-black mt-6 xl:mt-8 mb-3 xl:mb-4">
-                            CHOOSE FOOD
-                        </h3>
-                        <p className="text-gray-600 text-sm xl:text-base max-w-xs mx-auto leading-relaxed">
-                            Browse our extensive menu and pick your favorites
-                        </p>
-                    </div>
-                </div>
-
-                {/* Steps Container - Mobile/Tablet Layout */}
-                <div className="lg:hidden flex flex-col items-center gap-12 sm:gap-16">
-
-                    {/* Step 1 */}
-                    <div className={`relative text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                        <div className="relative inline-block">
-                            <div className="w-56 h-56 sm:w-72 sm:h-72 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full flex items-center justify-center shadow-xl">
-                                <img
-                                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=400&q=80"
-                                    alt="Pizza"
-                                    className="w-44 h-44 sm:w-56 sm:h-56 object-cover rounded-full"
-                                />
-                            </div>
-                            <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-12 h-12 sm:w-16 sm:h-16 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-lg sm:text-2xl shadow-lg">
-                                01
-                            </div>
-                        </div>
-                        <h3 className="text-gray-900 text-xl sm:text-2xl font-black mt-6 mb-3">
-                            COOKING WITH CARE
-                        </h3>
-                        <p className="text-gray-600 text-sm sm:text-base max-w-sm mx-auto leading-relaxed px-4">
-                            Experience the perfect dining with our carefully crafted dishes
-                        </p>
-                    </div>
-
-                    {/* Connector Arrow */}
-                    <div className="text-4xl text-yellow-400">↓</div>
-
-                    {/* Step 2 */}
-                    <div className={`relative text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '0.2s' }}>
-                        <div className="relative inline-block">
-                            <div className="w-56 h-56 sm:w-64 sm:h-64 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-3xl flex items-center justify-center shadow-2xl transform rotate-3">
-                                <div className="transform -rotate-3">
-                                    <div className="text-7xl sm:text-8xl">🧀</div>
-                                </div>
-                            </div>
-                            <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-12 h-12 sm:w-16 sm:h-16 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-lg sm:text-2xl shadow-lg">
-                                02
-                            </div>
-                        </div>
-                        <h3 className="text-gray-900 text-xl sm:text-2xl font-black mt-6 mb-3">
-                            QUICKLY DELIVERY
-                        </h3>
-                        <p className="text-gray-700 text-sm sm:text-base max-w-sm mx-auto leading-relaxed px-4">
-                            Fast and efficient delivery right to your doorstep
-                        </p>
-                    </div>
-
-                    {/* Connector Arrow */}
-                    <div className="text-4xl text-yellow-400">↓</div>
-
-                    {/* Step 3 */}
-                    <div className={`relative text-center transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ transitionDelay: '0.4s' }}>
-                        <div className="relative inline-block">
-                            <div className="w-56 h-56 sm:w-72 sm:h-72 bg-gradient-to-br from-yellow-300 to-yellow-400 rounded-full flex items-center justify-center shadow-xl overflow-hidden">
-                                <img
-                                    src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=400&q=80"
-                                    alt="Delivery"
-                                    className="w-60 h-60 sm:w-76 sm:h-76 object-cover"
-                                />
-                            </div>
-                            <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-12 h-12 sm:w-16 sm:h-16 bg-green-600 text-white rounded-full flex items-center justify-center font-black text-lg sm:text-2xl shadow-lg">
-                                03
-                            </div>
-                        </div>
-                        <h3 className="text-gray-900 text-xl sm:text-2xl font-black mt-6 mb-3">
-                            CHOOSE FOOD
-                        </h3>
-                        <p className="text-gray-600 text-sm sm:text-base max-w-sm mx-auto leading-relaxed px-4">
-                            Browse our extensive menu and pick your favorites
-                        </p>
-                    </div>
-                </div>
+        <div className="w-full bg-gradient-to-br from-red-50 via-white to-red-50 py-16 sm:py-20 lg:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-10 left-10 text-9xl">🍗</div>
+                <div className="absolute bottom-20 right-20 text-9xl">🍔</div>
+                <div className="absolute top-1/2 left-1/4 text-7xl">🍟</div>
+                <div className="absolute top-1/3 right-1/3 text-8xl">🥤</div>
             </div>
-            {/* yolluyan duyme */}
-            <div className="text-center mt-16">
-                <button
-                    onClick={() => navigate("/faq")}
-                    className="bg-green-600 hover:bg-green-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300"
-                >
-                    Learn More FAQ
-                </button>
+
+            <div className="container mx-auto max-w-7xl relative z-10">
+                {/* Heading with KFC Style */}
+                <div className="text-center mb-16 lg:mb-20">
+                    <div className="inline-block">
+                        <h2 className="text-red-600 text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 tracking-tight">
+                            IT'S FINGER LICKIN' GOOD
+                        </h2>
+                        <div className="h-2 bg-gradient-to-r from-transparent via-red-600 to-transparent rounded-full"></div>
+                    </div>
+                    <p className="text-gray-600 text-lg sm:text-xl mt-6 max-w-2xl mx-auto">
+                        Experience the legendary taste in 3 simple steps
+                    </p>
+                </div>
+
+                {/* Desktop Timeline */}
+                <div className="hidden lg:block relative">
+                    {/* Timeline Line */}
+                    <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-red-200 via-red-400 to-red-600 transform -translate-y-1/2"></div>
+
+                    <div className="grid grid-cols-3 gap-8 relative">
+                        {steps.map((step, index) => (
+                            <div
+                                key={index}
+                                className={`text-center transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+                                    }`}
+                                style={{ transitionDelay: `${index * 0.2}s` }}
+                            >
+                                {/* Step Card */}
+                                <div className={`relative group cursor-pointer ${activeStep === index ? 'scale-105' : ''} transition-transform duration-500`}>
+                                    {/* Connecting Circle */}
+                                    <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 translate-y-full">
+                                        <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${step.color} border-4 border-white shadow-lg ${activeStep === index ? 'animate-ping absolute' : ''}`}></div>
+                                        <div className={`w-6 h-6 rounded-full bg-gradient-to-br ${step.color} border-4 border-white shadow-lg relative`}></div>
+                                    </div>
+
+                                    {/* Main Card */}
+                                    <div className={`bg-white rounded-3xl p-8 shadow-xl group-hover:shadow-2xl transition-all duration-300 border-4 ${activeStep === index ? 'border-red-600' : 'border-transparent'}`}>
+                                        {/* Icon */}
+                                        <div className={`text-8xl mb-6 transform group-hover:scale-110 transition-transform duration-300 ${activeStep === index ? 'animate-bounce' : ''}`}>
+                                            {step.icon}
+                                        </div>
+
+                                        {/* Number Badge */}
+                                        <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br ${step.color} text-white font-black text-2xl mb-4 shadow-lg`}>
+                                            {step.number}
+                                        </div>
+
+                                        {/* Title */}
+                                        <h3 className="text-gray-900 text-2xl font-black mb-4 tracking-tight">
+                                            {step.title}
+                                        </h3>
+
+                                        {/* Description */}
+                                        <p className="text-gray-600 text-base leading-relaxed">
+                                            {step.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Mobile/Tablet Layout */}
+                <div className="lg:hidden space-y-8">
+                    {steps.map((step, index) => (
+                        <div
+                            key={index}
+                            className={`transition-all duration-700 ${isVisible ? 'translate-x-0 opacity-100' : index % 2 === 0 ? '-translate-x-20 opacity-0' : 'translate-x-20 opacity-0'
+                                }`}
+                            style={{ transitionDelay: `${index * 0.2}s` }}
+                        >
+                            <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-4 border-red-100 hover:border-red-600 transition-all duration-300">
+                                {/* Header with number and icon */}
+                                <div className="flex items-center justify-between mb-6">
+                                    <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br ${step.color} text-white font-black text-2xl sm:text-3xl flex items-center justify-center shadow-lg`}>
+                                        {step.number}
+                                    </div>
+                                    <div className="text-6xl sm:text-7xl">
+                                        {step.icon}
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <h3 className="text-gray-900 text-xl sm:text-2xl font-black mb-3 tracking-tight">
+                                    {step.title}
+                                </h3>
+                                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                                    {step.description}
+                                </p>
+                            </div>
+
+                            {/* Connector Arrow */}
+                            {index < steps.length - 1 && (
+                                <div className="flex justify-center my-4">
+                                    <div className="text-5xl text-red-600">↓</div>
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+
+                {/* CTA Section */}
+                <div className="text-center mt-16 lg:mt-20">
+                    <div className="bg-gradient-to-r from-red-600 to-red-700 rounded-2xl p-8 shadow-2xl">
+                        <h3 className="text-white text-2xl sm:text-3xl font-black mb-4">
+                            READY TO ORDER?
+                        </h3>
+                        <p className="text-red-100 text-lg mb-6 max-w-2xl mx-auto">
+                            Got questions about our menu or delivery? Check out our FAQ
+                        </p>
+                        <button onClick={() => Navigate("/faq")} className="bg-white text-red-600 px-10 py-4 rounded-xl font-black text-lg hover:bg-red-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+                            LEARN MORE FAQ
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
