@@ -129,7 +129,7 @@ const HomePage = () => {
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                             </button>
 
-                            <button className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold text-lg px-8 py-5 rounded-full border-2 border-white/50 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                            <button onClick={() => window.open("https://www.youtube.com/watch?v=akObashEDu4&t=705s", "_blank")} className="group bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-bold text-lg px-8 py-5 rounded-full border-2 border-white/50 transition-all duration-300 transform hover:scale-105 shadow-xl">
                                 <span className="flex items-center gap-2">
                                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />

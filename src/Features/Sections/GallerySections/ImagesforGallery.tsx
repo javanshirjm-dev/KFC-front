@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router';
 
 const images = [
     {
@@ -168,12 +169,12 @@ const Gallery = () => {
 
                 {/* Bottom CTA */}
                 <div className="text-center mt-12 sm:mt-16 flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <button className="w-full sm:w-auto bg-orange-500 text-white px-10 sm:px-12 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-orange-600 transition-all hover:scale-105 shadow-xl">
+                    <Link to="/shop" className="w-full sm:w-auto bg-orange-500 text-white px-10 sm:px-12 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-orange-600 transition-all hover:scale-105 shadow-xl">
                         View Full Menu
-                    </button>
-                    <button className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-10 sm:px-12 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white hover:text-black transition-all">
+                    </Link>
+                    <Link to="/shop" className="w-full sm:w-auto bg-transparent border-2 border-white text-white px-10 sm:px-12 py-3.5 sm:py-4 rounded-full font-bold text-base sm:text-lg hover:bg-white hover:text-black transition-all">
                         Order Now
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

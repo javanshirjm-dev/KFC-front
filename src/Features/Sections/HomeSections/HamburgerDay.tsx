@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { Link } from 'react-router';
 
 const HamburgerDayBanner = () => {
     const [imageIndex, setImageIndex] = useState(0);
-    const navigate = useNavigate();
 
     const images = [
         "https://www.banburyguardian.co.uk/jpim-static/image/2025/02/03/14/09/KFC-Iconic-bunless-burger-makes-a-return-to-restaurants-with-a-spicy-kick.jpeg?width=1200&enable=upscale",
@@ -127,13 +126,13 @@ const HamburgerDayBanner = () => {
 
                         {/* Order Button */}
                         <div className="pt-2 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-                            <button className="group bg-yellow-400 hover:bg-yellow-300 text-red-600 font-black text-xl px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-3 mx-auto overflow-hidden relative">
-                                <span onClick={() => navigate('/shop')} className="relative z-10 flex items-center gap-3">
+                            <Link to="/shop" className="group bg-yellow-400 hover:bg-yellow-300 text-red-600 justify-center font-black text-xl px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-3 mx-auto overflow-hidden relative">
+                                <span className="relative  z-10 flex items-center gap-3">
                                     ORDER NOW
                                     <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

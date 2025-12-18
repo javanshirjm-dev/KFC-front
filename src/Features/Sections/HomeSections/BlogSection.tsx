@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Calendar, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router'; // 1. Added Import
 
 const BlogSection = () => {
     const [isVisible, setIsVisible] = useState(false);
@@ -73,12 +74,15 @@ const BlogSection = () => {
                                     {/* Overlay on Hover */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                                    {/* Read More Button on Hover */}
+                                    {/* Read More Button on Hover - CHANGED TO LINK */}
                                     <div className="absolute bottom-6 left-6 right-6 transform translate-y-10 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                        <button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-full flex items-center justify-center gap-2">
+                                        <Link
+                                            to="/blog"
+                                            className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-full flex items-center justify-center gap-2"
+                                        >
                                             Read More
                                             <ArrowRight className="w-5 h-5" />
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
 
@@ -105,12 +109,15 @@ const BlogSection = () => {
                     ))}
                 </div>
 
-                {/* View All Button */}
+                {/* View All Button - CHANGED TO LINK */}
                 <div className="text-center mt-12">
-                    <button className="group bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-3">
+                    <Link
+                        to="/blog"
+                        className="group bg-red-600 hover:bg-red-700 text-white font-bold text-lg px-10 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-xl inline-flex items-center gap-3"
+                    >
                         View All Posts
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { Link } from 'react-router';
 const FoodGallery = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -75,9 +75,9 @@ const FoodGallery = () => {
                                     <h3 className="text-white text-xl font-black text-center px-4">
                                         {image.title}
                                     </h3>
-                                    <button className="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
+                                    <Link to="/shop" className="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">
                                         View Details
-                                    </button>
+                                    </Link>
                                 </div>
 
                                 {/* Decorative Corner */}
