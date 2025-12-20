@@ -2,13 +2,137 @@
     "banner": {
         "title0": "SUPER",
         "title": "DELICIOUS",
-        "desc": "The best burgers and pizzas in the city.",
-        "orderText": "Start Your Order Just Only {{price}}",
+        "orderText": "Order today for just {{price}}",
+        "desc": "Experience the crispiness of our secret recipe chicken and the freshness of premium ingredients. The best burger in town!",
         "orderNow": "ORDER NOW",
-        "watchVideo": "Watch Video",
-        "happy": "50K+ Happy",
-        "customers": "Customers",
-        "rating": "4.9",
-        "altImage": "Delicious Burger"
+        "watchVideo": "WATCH VIDEO",
+        "happy": "Happy",
+        "customers": "Customers"
+    },
+    "about_section": {
+        "label": "About FoodKing",
+        "title": "Where Culinary Art Meets Passion",
+        "description": "Welcome to our culinary haven, where each dish is a symphony of flavors meticulously crafted to tantalize your taste buds. Nestled in the heart of the city, our restaurant is an inviting space that combines modern elegance with warm hospitality.",
+        "stats": {
+            "years": {
+                "value": "25+",
+                "label": "Years Experience"
+            },
+            "dishes": {
+                "value": "100+",
+                "label": "Unique Dishes"
+            }
+        },
+        "chef": {
+            "name": "Michael V. Christensen",
+            "role": "CEO & Founder"
+        },
+        "image_alt": "Chef presenting dish"
+    },
+    "blog_section": {
+        "title": "EXPLORE NEWS & BLOG",
+        "view_all": "View All Posts",
+        "read_more": "Read More",
+        "posts": {
+            "post_1": {
+                "category": "Fried Chicken",
+                "date": "15 December 2024",
+                "title": "The Secret Behind KFC's 11 Herbs and Spices"
+            },
+            "post_2": {
+                "category": "Menu Favorites",
+                "date": "15 December 2024",
+                "title": "KFC's Most Popular Bucket Meals Ranked"
+            },
+            "post_3": {
+                "category": "Behind the Scenes",
+                "date": "15 December 2024",
+                "title": "How KFC Makes Their Famous Crispy Chicken"
+            }
+        }
+    },
+    "food_gallery": {
+        "view_details": "View Details",
+        "items": {
+            "item_1": {
+                "title": "Hot Wings",
+                "category": "Appetizers"
+            },
+            "item_2": {
+                "title": "Bucket Meal",
+                "category": "Family Packs"
+            },
+            "item_3": {
+                "title": "Zinger Burger",
+                "category": "Burgers"
+            },
+            "item_4": {
+                "title": "Coleslaw & Fries",
+                "category": "Sides"
+            },
+            "item_5": {
+                "title": "Colonel's Original",
+                "category": "Signature"
+            }
+        }
+    },
+    "explore_products": {
+        "title": "Featured Menu",
+        "view_all": "View all",
+        "loading": "Loading featured items...",
+        "error": "Unable to load featured items: {{message}}",
+        "untitled": "Untitled",
+        "price_unavailable": "Price unavailable"
+    },
+    "features_section": {
+        "feature_1": {
+            "title": "Best Quality Food",
+            "description": "We ensure every dish meets our highest standards of freshness and taste."
+        },
+        "feature_2": {
+            "title": "Fast Food Delivery",
+            "description": "Hot and fresh meals delivered straight to your doorstep in no time."
+        },
+        "feature_3": {
+            "title": "Money Back Guarantee",
+            "description": "If you are not satisfied, we promise a hassle-free refund process."
+        },
+        "feature_4": {
+            "title": "100% Natural Food",
+            "description": "Made with pure, natural ingredients without any artificial additives."
+        }
+    },
+    "menu_cards": {
+        "start_price": "START PRICE {{price}}",
+        "order_now": "ORDER NOW",
+        "card_1": {
+            "title": "BEST BURGER FRIES",
+            "alt": "Delicious burger with fries"
+        },
+        "card_2": {
+            "title": "SUPER CHICKEN FRY",
+            "alt": "Super chicken fry"
+        },
+        "card_3": {
+            "title": "POP CORN CHICKEN",
+            "alt": "Chicken popcorn"
+        }
+    },
+    "hamburger_day_banner": {
+        "title_1": "TODAY'S",
+        "title_2": "THE",
+        "title_3": "HAMBURGER'",
+        "title_4": "DAY",
+        "special_price": "Special Price",
+        "order_now": "ORDER NOW"
+    },
+    "testimonial_section": {
+        "title": "Quality Food",
+        "description": "Nestled within a fresh, toasted bun, each bite unveils a perfect harmony of textures, complemented by layers of crisp lettuce, ripe tomatoes, and the crunch pickles Our secret sauce proprietary blend savory",
+        "author": {
+            "name": "Richard D. Baker",
+            "role": "CEO & Founder"
+        },
+        "image_alt": "Happy restaurant staff"
     }
 }

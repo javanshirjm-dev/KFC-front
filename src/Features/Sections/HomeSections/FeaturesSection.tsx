@@ -1,36 +1,39 @@
 import { useState, useEffect } from 'react';
 import { Truck, DollarSign, Award, UtensilsCrossed } from 'lucide-react';
+import { useTranslation } from 'react-i18next'; // Import hook
 
 const FeaturesSection = () => {
+    const { t } = useTranslation(); // Initialize hook
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
     }, []);
 
+    // Define features using translations
     const features = [
         {
             icon: <Award className="w-16 h-16" />,
-            title: "Best Quality Food",
-            description: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
+            title: t('features_section.feature_1.title'),
+            description: t('features_section.feature_1.description'),
             delay: "0s"
         },
         {
             icon: <Truck className="w-16 h-16" />,
-            title: "Fast Food Delivery",
-            description: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
+            title: t('features_section.feature_2.title'),
+            description: t('features_section.feature_2.description'),
             delay: "0.2s"
         },
         {
             icon: <DollarSign className="w-16 h-16" />,
-            title: "Money Back Guarantee",
-            description: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
+            title: t('features_section.feature_3.title'),
+            description: t('features_section.feature_3.description'),
             delay: "0.4s"
         },
         {
             icon: <UtensilsCrossed className="w-16 h-16" />,
-            title: "100% Natural Food",
-            description: "Sed ut perspiciatis unde omnis este natus sit voluptatem",
+            title: t('features_section.feature_4.title'),
+            description: t('features_section.feature_4.description'),
             delay: "0.6s"
         }
     ];
@@ -64,13 +67,13 @@ const FeaturesSection = () => {
                             style={{ transitionDelay: feature.delay }}
                         >
                             {/* Card */}
-                            <div className="relative bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+                            <div className="relative bg-white/10 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 text-center hover:bg-white/20 hover:border-yellow-400/50 transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full flex flex-col items-center">
 
                                 {/* Glow Effect on Hover */}
                                 <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-orange-400/0 group-hover:from-yellow-400/10 group-hover:to-orange-400/10 rounded-2xl transition-all duration-300"></div>
 
                                 {/* Icon Container */}
-                                <div className="relative mb-6 inline-flex">
+                                <div className="relative mb-6 inline-flex flex-shrink-0">
                                     {/* Icon Background Circle */}
                                     <div className="absolute inset-0 bg-yellow-400 opacity-20 rounded-full blur-xl group-hover:opacity-40 transition-opacity"></div>
 
@@ -81,12 +84,12 @@ const FeaturesSection = () => {
                                 </div>
 
                                 {/* Title */}
-                                <h3 className="text-white text-2xl font-bold mb-3 group-hover:text-yellow-300 transition-colors">
+                                <h3 className="text-white text-2xl font-bold mb-3 group-hover:text-yellow-300 transition-colors h-16 flex items-center justify-center">
                                     {feature.title}
                                 </h3>
 
                                 {/* Description */}
-                                <p className="text-white/90 text-base leading-relaxed">
+                                <p className="text-white/90 text-base leading-relaxed flex-grow">
                                     {feature.description}
                                 </p>
 

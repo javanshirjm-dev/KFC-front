@@ -1,7 +1,7 @@
-
 import React from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router'
+import { useTranslation } from 'react-i18next' // Import hook
 
 type MediaObject = {
     id: number
@@ -49,6 +49,7 @@ function buildImageUrlFromMedia(media: MediaObject | undefined | null) {
 }
 
 const ExploreProductsHome: React.FC = () => {
+    const { t } = useTranslation(); // Initialize hook
     const { data, isLoading, isError, error } = useQuery<FoodItem[], Error>({
         queryKey: ['exploreFoods'],
         queryFn: fetchExploreFoods
@@ -58,7 +59,7 @@ const ExploreProductsHome: React.FC = () => {
         return (
             <section className="py-12">
                 <div className="container mx-auto px-6">
-                    <div className="text-center text-gray-600">Loading featured items...</div>
+                    <div className="text-center text-gray-600">{t('explore_products.loading')}</div>
                 </div>
             </section>
         )
@@ -68,7 +69,9 @@ const ExploreProductsHome: React.FC = () => {
         return (
             <section className="py-12">
                 <div className="container mx-auto px-6">
-                    <div className="text-center text-red-600">Unable to load featured items: {(error as Error)?.message}</div>
+                    <div className="text-center text-red-600">
+                        {t('explore_products.error', { message: (error as Error)?.message })}
+                    </div>
                 </div>
             </section>
         )
@@ -80,8 +83,8 @@ const ExploreProductsHome: React.FC = () => {
         <section className="py-12">
             <div className="container mx-auto px-6">
                 <div className="flex items-center justify-between mb-6">
-                    <h2 className="text-2xl font-semibold text-gray-900">Featured Menu</h2>
-                    <Link to="/shop" className="text-sm text-gray-600 hover:text-gray-900">View all</Link>
+                    <h2 className="text-2xl font-semibold text-gray-900">{t('explore_products.title')}</h2>
+                    <Link to="/shop" className="text-sm text-gray-600 hover:text-gray-900">{t('explore_products.view_all')}</Link>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -90,7 +93,7 @@ const ExploreProductsHome: React.FC = () => {
                         const raw = it.attributes ? it.attributes : it
                         const imgRel = raw.image?.data?.attributes?.url || raw.image?.url || raw.image?.formats?.thumbnail?.url
                         const img = buildImageUrlFromMedia({ id: raw.image?.data?.id || raw.image?.id || 0, name: raw.image?.name || '', url: imgRel })
-                        const title = raw.title || raw.name || 'Untitled'
+                        const title = raw.title || raw.name || t('explore_products.untitled')
                         const price = typeof raw.price !== 'undefined' ? raw.price : null
                         const id = it.id ?? raw.id
 
@@ -108,7 +111,7 @@ const ExploreProductsHome: React.FC = () => {
                                     {price !== null ? (
                                         <div className="text-sm font-semibold text-gray-800">${Number(price).toFixed(2)}</div>
                                     ) : (
-                                        <div className="text-sm text-gray-500">Price unavailable</div>
+                                        <div className="text-sm text-gray-500">{t('explore_products.price_unavailable')}</div>
                                     )}
                                 </div>
                             </Link>

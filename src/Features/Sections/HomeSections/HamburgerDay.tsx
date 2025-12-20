@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next'; // Import hook
 
 const HamburgerDayBanner = () => {
+    const { t } = useTranslation(); // Initialize hook
     const [imageIndex, setImageIndex] = useState(0);
 
     const images = [
@@ -88,22 +90,23 @@ const HamburgerDayBanner = () => {
                     {/* Main Content */}
                     <div className="relative z-10 text-center space-y-6 animate-fade-in">
 
-
-
                         {/* Main Heading */}
                         <div className="space-y-1 pt-1">
                             <h1 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in">
-                                TODAY'S
+                                {t('hamburger_day_banner.title_1')}
                             </h1>
                             <h2 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.1s' }}>
-                                THE
+                                {t('hamburger_day_banner.title_2')}
                             </h2>
                             <h3 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.2s' }}>
-                                HAMBURGER'
+                                {t('hamburger_day_banner.title_3')}
                             </h3>
-                            <h4 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.3s' }}>
-                                DAY
-                            </h4>
+                            {/* Render 4th line only if it's not empty (handles Azerbaijani layout difference) */}
+                            {t('hamburger_day_banner.title_4').trim() !== "" && (
+                                <h4 className="text-white font-black text-5xl md:text-6xl lg:text-7xl leading-none tracking-tight drop-shadow-2xl animate-slide-in" style={{ animationDelay: '0.3s' }}>
+                                    {t('hamburger_day_banner.title_4')}
+                                </h4>
+                            )}
                         </div>
 
                         {/* Price Section */}
@@ -116,7 +119,7 @@ const HamburgerDayBanner = () => {
 
                             <div className="text-left">
                                 <p className="text-white/90 text-xl font-bold tracking-wider">
-                                    Special Price
+                                    {t('hamburger_day_banner.special_price')}
                                 </p>
                                 <p className="text-white font-black text-5xl md:text-6xl drop-shadow-xl">
                                     $55
@@ -128,7 +131,7 @@ const HamburgerDayBanner = () => {
                         <div className="pt-2 animate-fade-in" style={{ animationDelay: '0.7s' }}>
                             <Link to="/shop" className="group bg-yellow-400 hover:bg-yellow-300 text-red-600 justify-center font-black text-xl px-12 py-5 rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl flex items-center gap-3 mx-auto overflow-hidden relative">
                                 <span className="relative  z-10 flex items-center gap-3">
-                                    ORDER NOW
+                                    {t('hamburger_day_banner.order_now')}
                                     <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>

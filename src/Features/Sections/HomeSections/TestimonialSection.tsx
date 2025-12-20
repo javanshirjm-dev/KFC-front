@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; // Import hook
 
 const TestimonialSection = () => {
+    const { t } = useTranslation(); // Initialize hook
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -33,7 +35,9 @@ const TestimonialSection = () => {
 
                             {/* Title and Stars */}
                             <div>
-                                <h3 className="text-gray-900 text-3xl font-bold mb-2">Quality Food</h3>
+                                <h3 className="text-gray-900 text-3xl font-bold mb-2">
+                                    {t('testimonial_section.title')}
+                                </h3>
                                 <div className="flex gap-1">
                                     {[...Array(5)].map((_, i) => (
                                         <svg key={i} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -46,7 +50,7 @@ const TestimonialSection = () => {
 
                         {/* Testimonial Text */}
                         <p className="text-gray-700 text-xl lg:text-2xl leading-relaxed font-medium">
-                            Nestled within a fresh, toasted bun, each bite unveils a perfect harmony of textures, complemented by layers of crisp lettuce, ripe tomatoes, and the crunch pickles Our secret sauce proprietary blend savory
+                            {t('testimonial_section.description')}
                         </p>
 
                         {/* Author Info */}
@@ -55,15 +59,19 @@ const TestimonialSection = () => {
                             <div className="w-16 h-16 rounded-full overflow-hidden border-4 border-red-600 shadow-lg">
                                 <img
                                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
-                                    alt="Richard D. Baker"
+                                    alt={t('testimonial_section.author.name')}
                                     className="w-full h-full object-cover"
                                 />
                             </div>
 
                             {/* Name and Title */}
                             <div>
-                                <h4 className="text-gray-900 text-xl font-bold">Richard D. Baker</h4>
-                                <p className="text-gray-600 text-sm font-medium">CEO & Founder</p>
+                                <h4 className="text-gray-900 text-xl font-bold">
+                                    {t('testimonial_section.author.name')}
+                                </h4>
+                                <p className="text-gray-600 text-sm font-medium">
+                                    {t('testimonial_section.author.role')}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -74,7 +82,7 @@ const TestimonialSection = () => {
                             {/* Main Image */}
                             <img
                                 src="https://hips.hearstapps.com/hmg-prod/images/210331-delish-burger-anatomy-21238-eb-1622211152.jpg?crop=0.838xw:0.559xh;0.0595xw,0.126xh"
-                                alt="Happy restaurant staff"
+                                alt={t('testimonial_section.image_alt')}
                                 className="w-full h-[600px] object-cover"
                             />
 

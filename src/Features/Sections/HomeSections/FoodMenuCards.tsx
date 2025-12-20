@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router'; // 1. Add this import
+import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next'; // Import hook
 
 const FoodMenuCards = () => {
+    const { t } = useTranslation(); // Initialize hook
     const [visibleCards, setVisibleCards] = useState([false, false, false]);
     const sectionRef = useRef(null);
 
@@ -29,33 +31,34 @@ const FoodMenuCards = () => {
         };
     }, []);
 
+    // Define menu items using translations
     const menuItems = [
         {
-            title: "BEST BURGER FRIES",
+            title: t('menu_cards.card_1.title'),
             startPrice: "$25",
             finalPrice: "$38",
             badgeColor: "bg-yellow-500",
             buttonColor: "bg-red-600 hover:bg-red-700",
             image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&h=600&fit=crop",
-            alt: "Delicious burger with fries"
+            alt: t('menu_cards.card_1.alt')
         },
         {
-            title: "SUPER CHICKEN FRY",
+            title: t('menu_cards.card_2.title'),
             startPrice: "$25",
             finalPrice: "$43",
             badgeColor: "bg-red-600",
             buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-gray-900",
             image: "https://i.abcnewsfe.com/a/a84ad13b-faa9-4205-868b-da6634c440d3/Chicken-TendersBuckets_1752500503886_hpMain_16x9.jpg?w=1600",
-            alt: "Super chicken fry"
+            alt: t('menu_cards.card_2.alt')
         },
         {
-            title: "POP CORN CHICKEN",
+            title: t('menu_cards.card_3.title'),
             startPrice: "$25",
             finalPrice: "$38",
             badgeColor: "bg-yellow-500",
             buttonColor: "bg-red-600 hover:bg-red-700",
             image: "https://i.pinimg.com/736x/27/0d/6d/270d6d9db5d22295c1eca6e44c572297.jpg",
-            alt: "Chicken popcorn"
+            alt: t('menu_cards.card_3.alt')
         }
     ];
 
@@ -93,14 +96,14 @@ const FoodMenuCards = () => {
                                     {/* Top Content */}
                                     <div className="space-y-2">
                                         <p className="text-yellow-500 font-bold text-xl uppercase tracking-wider" style={{ fontFamily: 'Ubuntu, sans-serif' }} >
-                                            START PRICE {item.startPrice}
+                                            {t('menu_cards.start_price', { price: item.startPrice })}
                                         </p>
                                         <h3 className="text-white font-black text-6xl leading-tight" style={{ fontFamily: 'Ubuntu, sans-serif' }} >
                                             {item.title}
                                         </h3>
                                     </div>
 
-                                    {/* Bottom Button - CHANGED HERE */}
+                                    {/* Bottom Button */}
                                     <Link
                                         to="/shop"
                                         className={`${item.buttonColor} text-white font-bold py-4 px-8  flex items-center justify-center gap-3 transform group-hover:translate-y-0 translate-y-2 transition-all duration-300 shadow-lg w-full`}
@@ -108,7 +111,7 @@ const FoodMenuCards = () => {
                                         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                                         </svg>
-                                        ORDER NOW
+                                        {t('menu_cards.order_now')}
                                     </Link>
                                 </div>
                             </div>

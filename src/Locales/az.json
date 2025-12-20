@@ -1,14 +1,138 @@
 {
     "banner": {
-        "title0": "ƏN",
-        "title": "DADLI",
-        "desc": "Şəhərin ən dadlı burger və pitssaları.",
-        "orderText": "Sifarişinizi başlatmaq üçün yalnız {{price}}",
+        "title0": "SUPER",
+        "title": "LƏZZƏTLİ",
+        "orderText": "İndi sifariş et: cəmi {{price}}",
+        "desc": "Gizli reseptli toyuğumuzun xırtıldayan dadını və inqrediyentlərin təravətini hiss edin. Şəhərin ən yaxşı burgeri!",
         "orderNow": "SİFARİŞ ET",
-        "watchVideo": "Videoya bax",
-        "happy": "50K+ Məmnun",
-        "customers": "Müştərilər",
-        "rating": "4.9",
-        "altImage": "Dadlı Burger"
+        "watchVideo": "VİDEO",
+        "happy": "Məmnun",
+        "customers": "Müştəri"
+    },
+    "about_section": {
+        "label": "FoodKing Haqqında",
+        "title": "Kulinariya Sənətinin Ehtirasla Görüşdüyü Məkan",
+        "description": "Hər yeməyin dad qönçələrinizi oxşamaq üçün diqqətlə hazırlanmış ləzzət simfoniyası olduğu kulinariya cənnətimizə xoş gəlmisiniz. Şəhərin mərkəzində yerləşən restoranımız müasir zərifliyi səmimi qonaqpərvərliklə birləşdirən dəvətedici bir məkandır.",
+        "stats": {
+            "years": {
+                "value": "25+",
+                "label": "İllik Təcrübə"
+            },
+            "dishes": {
+                "value": "100+",
+                "label": "Unikal Yemək"
+            }
+        },
+        "chef": {
+            "name": "Maykl V. Kristensen",
+            "role": "CEO və Təsisçi"
+        },
+        "image_alt": "Aşpaz yeməyi təqdim edir"
+    },
+    "blog_section": {
+        "title": "XƏBƏRLƏR VƏ BLOQU KƏŞF EDİN",
+        "view_all": "Bütün Yazıları Göstər",
+        "read_more": "Daha Çox Oxu",
+        "posts": {
+            "post_1": {
+                "category": "Qızardılmış Toyuq",
+                "date": "15 Dekabr 2024",
+                "title": "KFC-nin 11 Ədviyyat və Otu Arxasındakı Sirr"
+            },
+            "post_2": {
+                "category": "Menyu Favoriləri",
+                "date": "15 Dekabr 2024",
+                "title": "KFC-nin Ən Məşhur Səbət Yeməklərinin Reytinqi"
+            },
+            "post_3": {
+                "category": "Səhnə Arxası",
+                "date": "15 Dekabr 2024",
+                "title": "KFC Məşhur Xırtıldayan Toyuğunu Necə Hazırlayır"
+            }
+        }
+    },
+    "food_gallery": {
+        "view_details": "Ətraflı Bax",
+        "items": {
+            "item_1": {
+                "title": "Acılı Qanadlar",
+                "category": "Qəlyanaltılar"
+            },
+            "item_2": {
+                "title": "Səbət Yeməyi",
+                "category": "Ailə Paketləri"
+            },
+            "item_3": {
+                "title": "Zinger Burger",
+                "category": "Burgerlər"
+            },
+            "item_4": {
+                "title": "Kələm Salatı və Kartof Fri",
+                "category": "Qarnirlər"
+            },
+            "item_5": {
+                "title": "Polkovnikin Orijinalı",
+                "category": "İmza Yeməklər"
+            }
+        }
+    },
+    "explore_products": {
+        "title": "Seçilmiş Menyu",
+        "view_all": "Hamısına bax",
+        "loading": "Seçilmiş yeməklər yüklənir...",
+        "error": "Yeməkləri yükləmək mümkün olmadı: {{message}}",
+        "untitled": "Adsız",
+        "price_unavailable": "Qiymət yoxdur"
+    },
+    "features_section": {
+        "feature_1": {
+            "title": "Ən Yüksək Keyfiyyət",
+            "description": "Hər yeməyin ən yüksək təzəlik və dad standartlarına cavab verməsini təmin edirik."
+        },
+        "feature_2": {
+            "title": "Sürətli Çatdırılma",
+            "description": "Qaynar və təzə yeməklər qısa zamanda qapınıza çatdırılır."
+        },
+        "feature_3": {
+            "title": "Pul Geri Zəmanəti",
+            "description": "Əgər razı qalmasanız, problemsiz pul geri qaytarma prosesinə zəmanət veririk."
+        },
+        "feature_4": {
+            "title": "100% Təbii Qida",
+            "description": "Süni qatqılar olmadan, saf və təbii inqrediyentlərdən hazırlanmışdır."
+        }
+    },
+    "menu_cards": {
+        "start_price": "BAŞLANĞIC QİYMƏTİ {{price}}",
+        "order_now": "SİFARİŞ ET",
+        "card_1": {
+            "title": "ƏN YAXŞI BURGER FRİ",
+            "alt": "Ləzzətli burger və fri"
+        },
+        "card_2": {
+            "title": "SUPER TOYUQ QIZARTMASI",
+            "alt": "Super toyuq qızartması"
+        },
+        "card_3": {
+            "title": "POPKORN TOYUQ",
+            "alt": "Popkorn toyuq"
+        }
+    },
+    "hamburger_day_banner": {
+        "title_1": "BU GÜN",
+        "title_2": "HAMBURQER",
+        "title_3": "GÜNÜDÜR",
+        "title_4": " ",
+        "special_price": "Xüsusi Qiymət",
+        "order_now": "SİFARİŞ ET"
+    },
+    "testimonial_section": {
+        "title": "Keyfiyyətli Yemək",
+        "description": "Təzə, qızardılmış çörəyin içində hər dişlək mükəmməl tekstura harmoniyasını ortaya qoyur; xırtıldayan kahı, yetişmiş pomidorlar və xırtıldayan turşularla tamamlanır. Bizim gizli sousumuz xüsusi qarışığı ilə dadlıdır.",
+        "author": {
+            "name": "Riçard D. Beyker",
+            "role": "CEO və Təsisçi"
+        },
+        "image_alt": "Xoşbəxt restoran işçiləri"
     }
 }
