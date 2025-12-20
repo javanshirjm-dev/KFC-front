@@ -45,7 +45,7 @@ const FoodMenuCards = () => {
             finalPrice: "$43",
             badgeColor: "bg-red-600",
             buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-gray-900",
-            image: "https://crisco.com/wp-content/uploads/2025/01/Crispy-Chicken-Tenders-2-scaled.jpg",
+            image: "https://i.abcnewsfe.com/a/a84ad13b-faa9-4205-868b-da6634c440d3/Chicken-TendersBuckets_1752500503886_hpMain_16x9.jpg?w=1600",
             alt: "Super chicken fry"
         },
         {
